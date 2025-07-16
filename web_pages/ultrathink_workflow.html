@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltraThink V2 Workflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .workflow {
+            padding: 40px;
+        }
+
+        .phase {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .phase:last-child {
+            margin-bottom: 0;
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .phase-header h2 {
+            font-size: 1.8em;
+            font-weight: 500;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .step p {
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .arrow {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .arrow svg {
+            fill: #3498db;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric .value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .completion-note {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .workflow {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>UltraThink V2</h1>
+            <p>Setup and Usage Workflow</p>
+        </div>
+
+        <div class="workflow">
+            <!-- Phase 1: Initial Setup -->
+            <div class="phase">
+                <div class="phase-header">
+                    <h2>🚀 Initial Setup</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Navigate to GitHub</h3>
+                        <p>Go to the UltraThink V2 repository on GitHub. You can view everything directly in the web interface.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Copy Markdown File</h3>
+                        <p>Locate and copy the UltraThink markdown file from the repository. No need to clone - just copy from the web page.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Create .claude Folder</h3>
+                        <p>In your project's root directory, create a new folder named <code>.claude</code> (all lowercase).</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Setup Commands Folder</h3>
+                        <p>Inside <code>.claude</code>, create a <code>commands</code> subfolder and paste the markdown file there. Rename if desired.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">
+                <svg width="40" height="40" viewBox="0 0 24 24">
+                    <path d="M12 2L12 20M5 13L12 20L19 13"/>
+                </svg>
+            </div>
+
+            <!-- Phase 2: Idea Creation -->
+            <div class="phase">
+                <div class="phase-header">
+                    <h2>💡 Idea Creation and Task Generation</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Use Conversational AI</h3>
+                        <p>Describe your idea in depth using ChatGPT voice mode or similar AI tool for natural conversation flow.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Enable Thinking Mode</h3>
+                        <p>Activate planning/thinking mode so the AI can structure your idea into clear, actionable tasks.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Copy to UltraThink</h3>
+                        <p>Copy the structured prompt into UltraThink via Claude Code using the appropriate command format.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">
+                <svg width="40" height="40" viewBox="0 0 24 24">
+                    <path d="M12 2L12 20M5 13L12 20L19 13"/>
+                </svg>
+            </div>
+
+            <!-- Phase 3: Execution -->
+            <div class="phase">
+                <div class="phase-header">
+                    <h2>⚡ Execution Phase</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Start Claude Code</h3>
+                        <p>Navigate to your project root directory and start Claude Code. Type "/" followed by your command markdown file name (e.g., "/ultrathink") to access the UltraThink command.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Execute UltraThink Command</h3>
+                        <p>Use the UltraThink command and paste your structured task description as context. UltraThink will process your task automatically in this main computational phase.</p>
+                    </div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="value">1-1.5</div>
+                        <div class="label">Hours Duration</div>
+                    </div>
+                    <div class="metric">
+                        <div class="value">~$10</div>
+                        <div class="label">Approximate Cost</div>
+                    </div>
+                </div>
+                
+                <div class="completion-note">
+                    📊 Output will be approximately 80% complete and ready for refinement
+                </div>
+            </div>
+
+            <div class="arrow">
+                <svg width="40" height="40" viewBox="0 0 24 24">
+                    <path d="M12 2L12 20M5 13L12 20L19 13"/>
+                </svg>
+            </div>
+
+            <!-- Phase 4: Refinement -->
+            <div class="phase">
+                <div class="phase-header">
+                    <h2>🔧 Refinement & Completion</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Debug & Adjust</h3>
+                        <p>Manually debug and adjust the output using Claude Code with iterative prompt changes.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Iterative Refinement</h3>
+                        <p>Repeat the iteration process as needed until the tool is fully functional. Usually takes 1-2 hours for proficient users.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Final Checks</h3>
+                        <p>Perform comprehensive security and functionality checks to ensure the solution is ready for deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
