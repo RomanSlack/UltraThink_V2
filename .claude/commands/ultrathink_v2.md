@@ -5,7 +5,7 @@
 ## Context
 
 - Task description: $ARGUMENTS
-- Relevant code or files will be referenced ad-hoc using @ file syntax.
+- Relevant code or files will be referenced ad-hoc using @ file syntax or by their direct paths.
 
 ## Your Role
 
